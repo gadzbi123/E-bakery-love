@@ -1,3 +1,7 @@
+# E-bakery-love
+
+Website for creation of cakes, made in React with Tailwind
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
