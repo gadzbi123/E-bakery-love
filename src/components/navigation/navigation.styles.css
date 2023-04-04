@@ -1,0 +1,8 @@
+.navigation-input-box-shadow {
+  box-shadow: 0 1px 0 theme("colors.navy.DEFAULT");
+  /* filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.5)); */
+}
+
+.navigation-input-box-shadow-active {
+  box-shadow: 0 2px 0 theme("colors.brown.DEFAULT");
+}
