@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as SearchSvg } from "../../assets/search.svg";
+import SearchSvg from "../../assets/search.svg";
 import "./navigation.styles.css";
 const Navigation = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -19,7 +19,7 @@ const Navigation = () => {
           onBlur={onBlur}
           placeholder="Szukaj Ciast"
           className=" inline-block bg-transparent placeholder:text-navy focus:outline-none"></input>
-        <SearchSvg className="w-6 h-6 " />
+        <img src={SearchSvg} className="w-6 h-6 " />
       </div>
       <Link to="/" className="font-semibold font-serif text-5xl ">
         E Bakery Love

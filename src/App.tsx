@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Home from "./components/home/home.component";
-import logo from "./logo.svg";
 import Layout from "./routes/layout/layout.component";
 function App() {
   return (
