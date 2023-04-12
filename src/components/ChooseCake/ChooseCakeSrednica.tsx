@@ -3,7 +3,7 @@ const ChooseCakeSrednica = () => {
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Średnica w cm</h3>
-      <form className="flex gap-6 justify-center items-center justify-items-center mt-8">
+      <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
           id="18"
           name="srednica"
@@ -34,7 +34,7 @@ const ChooseCakeSrednica = () => {
           inputBackground="checked:bg-brown-dark-20"
           peerBorder="peer-checked/24:border-[1px]"
         />
-      </form>
+      </div>
     </div>
   );
 };

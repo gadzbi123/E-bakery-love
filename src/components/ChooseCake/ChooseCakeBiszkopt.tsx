@@ -3,7 +3,7 @@ const ChooseCakeBiszkopt = () => {
   return (
     <div className=" mt-16">
       <h3 className="text-center text-3xl">Kolor biszkoptu</h3>
-      <form className="flex gap-10 justify-center items-center justify-items-center mt-8">
+      <div className="flex gap-10 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
           id="bialy"
           name="KolorBiszkoptu"
@@ -34,7 +34,7 @@ const ChooseCakeBiszkopt = () => {
           inputBackground="checked:bg-green-700"
           peerBorder="peer-checked/szpinakowy:border-[1px]"
         />
-      </form>
+      </div>
     </div>
   );
 };

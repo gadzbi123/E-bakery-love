@@ -15,6 +15,9 @@ module.exports = {
         bottom: "0 2px 0 0  rgba(0, 0, 0, 0.25)",
       },
     },
+    fontFamily: {
+      body: "work sans",
+    },
     colors: {
       ...colors,
       yellow: {
