@@ -1,5 +1,5 @@
 import ChooseCakeInput from "./ChooseCakeInput";
-const ChooseCakeMotyw = () => {
+const ChooseCakeZamow = () => {
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Motyw</h3>
@@ -10,4 +10,4 @@ const ChooseCakeMotyw = () => {
     </div>
   );
 };
-export default ChooseCakeMotyw;
+export default ChooseCakeZamow;

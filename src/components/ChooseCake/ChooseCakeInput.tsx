@@ -8,6 +8,7 @@ type ChooseCakeInputProps = {
   inputBackground: string;
   peerBorder: string;
   className?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 const ChooseCakeInput: React.FC<ChooseCakeInputProps> = ({
   name,
@@ -19,14 +20,16 @@ const ChooseCakeInput: React.FC<ChooseCakeInputProps> = ({
   inputBackground,
   peerBorder,
   className,
+  onChange,
 }) => {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${className ?? ""}`}>
       <input
         id={id}
         type="radio"
         name={name}
         value={id}
+        onChange={onChange}
         className={`${peerRoot} appearance-none w-4 h-4 bg-gray-100 border-gray-300 rounded-full ${inputBackground} checked:border-transparent  mr-2 relative z-20`}
       />
       <label htmlFor={id} className={` text-xl ${peerLabel} relative z-20`}>

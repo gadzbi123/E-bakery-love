@@ -9,14 +9,21 @@ const ChooseCakeData = () => {
         ? `0${minDate.getMonth() + 1}`
         : minDate.getMonth() + 1
     }-${minDate.getDate()}`;
-    console.log(minDateFormatted);
     return minDateFormatted;
   };
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Data Uroczystości</h3>
       <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
-        <input type="date" min={calculateMinDate()} />
+        <input
+          type="date"
+          name="date"
+          min={calculateMinDate()}
+          className=" bg-yellow-light-20 text-xl py-2 px-4 rounded-md"
+          onChange={(e) => {
+            console.log(e.target.value);
+          }}
+        />
       </div>
     </div>
   );

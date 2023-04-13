@@ -1,11 +1,16 @@
+import { useRef } from "react";
 import ChooseCakeInput from "./ChooseCakeInput";
 const ChooseCakeMotyw = () => {
+  const motywInput = useRef<HTMLDivElement>(null);
+
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Motyw</h3>
-      <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
+      <div
+        ref={motywInput}
+        className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
-          id="kremowy"
+          id="kremowyMotyw"
           name="Motyw"
           label="Kremowy"
           peerRoot="peer/kremowy"
@@ -15,7 +20,7 @@ const ChooseCakeMotyw = () => {
           peerBorder="peer-checked/kremowy:border-[1px]"
         />
         <ChooseCakeInput
-          id="czekoladki"
+          id="czekoladkiMotyw"
           name="Motyw"
           label="Czekoladki"
           peerRoot="peer/czekoladki"
@@ -25,7 +30,7 @@ const ChooseCakeMotyw = () => {
           peerBorder="peer-checked/czekoladki:border-[1px]"
         />
         <ChooseCakeInput
-          id="kwiaty"
+          id="kwiatyMotyw"
           name="Motyw"
           label="Kwiaty"
           peerRoot="peer/kwiaty"
@@ -44,14 +49,21 @@ const ChooseCakeMotyw = () => {
           inputBackground="checked:bg-purple-700"
           peerBorder="peer-checked/owoceMotyw:border-[1px]"
         />
-        <input
+        {/* <input
+          onFocus={(e) => {
+            for (let i = 0; i < motywInput.current!.children!.length - 1; i++) {
+              motywInput.current?.children[i].children[0].removeAttribute(
+                "checked"
+              );
+              console.log(motywInput.current?.children[i].children[0]);
+            }
+          }}
           type="text"
           placeholder="Inny motyw"
-          onFocus={(e) => {
-            e.preventDefault();
-          }}
+          name="Motyw"
+          id="innyMotyw"
           className="text-xl w-36 bg-transparent appearance-none placeholder:text-navy-dark-20 border transition-all border-navy-dark-20 rounded-md text-gray-700 leading-tight focus:outline-none focus:bg-yellow-light-20 focus:border-navy-dark-10 py-1 px-1"
-        />
+        /> */}
       </div>
     </div>
   );
