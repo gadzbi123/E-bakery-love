@@ -1,5 +1,10 @@
-import type { PayloadAction } from "@reduxjs/toolkit";
-import { AnyAction, createSlice } from "@reduxjs/toolkit";
+import {
+  Action,
+  AnyAction,
+  PayloadAction,
+  createAction,
+  createSlice,
+} from "@reduxjs/toolkit";
 import { RootState } from "../rootReducer";
 type ChoicesState = {
   srednica: string;
@@ -22,6 +27,8 @@ const INITIAL_CHOICES: ChoicesState = {
   motyw: "",
   data: "",
 };
+
+createAction("cakeOrder/updateSrednica");
 
 export const CakeOrderSlice = createSlice({
   name: "cakeOrder",

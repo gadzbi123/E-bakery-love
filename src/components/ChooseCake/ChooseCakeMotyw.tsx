@@ -12,7 +12,7 @@ const ChooseCakeMotyw = () => {
         <ChooseCakeInput
           id="kremowyMotyw"
           name="Motyw"
-          label="Kremowy"
+          label="Ozdoby z kremu"
           peerRoot="peer/kremowy"
           peerLabel="peer-checked/kremowy:text-yellow-light-30"
           peerBackground="peer-checked/kremowy:bg-yellow-light-20"
@@ -49,6 +49,7 @@ const ChooseCakeMotyw = () => {
           inputBackground="checked:bg-purple-700"
           peerBorder="peer-checked/owoceMotyw:border-[1px]"
         />
+
         {/* <input
           onFocus={(e) => {
             for (let i = 0; i < motywInput.current!.children!.length - 1; i++) {
