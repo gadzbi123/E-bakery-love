@@ -1,7 +1,8 @@
+import { db } from "../../db";
 const Home = () => {
   return (
-    <div>
-      <h1>Home page</h1>
+    <div className="w-[50vw] h-[20vw] bg-red-500 flex items-center overflow-hidden">
+      <img className="w-full h-auto " alt="" src={db[0].imageUrl} />
     </div>
   );
 };
