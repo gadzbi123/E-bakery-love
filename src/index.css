@@ -16,4 +16,13 @@ code {
     monospace;
 }
 @layer components {
+  .image-opacity-gradient {
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(0, 0, 0, 0)),
+      to(rgba(0, 0, 0, 0.7))
+    );
+  }
 }

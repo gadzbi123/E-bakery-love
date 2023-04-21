@@ -13,7 +13,8 @@ const Navigation = () => {
   };
   return (
     <div className="flex justify-around gap-4 h-56 items-center text-navy-dark-20 bg-yellow-light-20">
-      <div className={`flex transition-all duration-200`}>
+      <div
+        className={`flex justify-center transition-all duration-200 w-[33%]`}>
         <input
           ref={ref}
           onFocus={onFocus}
@@ -22,10 +23,12 @@ const Navigation = () => {
           className=" inline-block bg-transparent placeholder:text-navy focus:outline-none"></input>
         <img src={SearchSvg} className="w-6 h-6 -ml-6 " onClick={handleClick} />
       </div>
-      <Link to="/" className="font-semibold font-serif text-5xl ">
+      <Link
+        to="/"
+        className="font-semibold font-serif text-5xl w-[33%] text-center">
         E Bakery Love
       </Link>
-      <div className="flex space-x-5 justify-between">
+      <div className="flex space-x-5 justify-around w-[33%] ">
         <Link to="moje-ciasto">Stwórz swoje ciasto</Link>
         <Link to="galeria">Galeria</Link>
         <Link to="kontakt">Kontakt</Link>
