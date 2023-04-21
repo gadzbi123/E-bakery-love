@@ -6,12 +6,10 @@ export enum ButtonType {
   important = "important",
 }
 
-type BT = ButtonType.base | ButtonType.inverted | ButtonType.important;
-
 export type buttonProps = {
   children?: React.ReactNode;
   className?: string;
-  styleType?: BT;
+  styleType?: ButtonType;
 } & React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
@@ -38,7 +36,7 @@ export const Button: FC<buttonProps> = (props) => {
       className={`${style()} px-6 py-3 max-w-[50%] appearance-none rounded-xl text-lg border border-solid 
         hover:shadow-lg hover:-translate-y-[4px]
         active:shadow-md active:-translate-y-[2px]
-        transition-all ${props.className}`}
+        transition-all ${props.className ?? ""}`}
       {...restProps}>
       {children}
     </button>

@@ -1,10 +1,18 @@
+import { useDispatch } from "react-redux";
 import ChooseCakeInput from "./ChooseCakeInput";
+import { ChangeEvent } from "react";
+import { updateKrem } from "../../store/cakeOrder/cakeOrder.reducer";
 const ChooseCakeKrem = () => {
+  const dispatch = useDispatch();
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateKrem(e.target.value));
+  };
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Krem</h3>
       <div className="flex gap-12 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
+          isRequired
           id="bialaCzekolada"
           name="Krem"
           label="Biała Czekolada"
@@ -13,6 +21,7 @@ const ChooseCakeKrem = () => {
           peerBackground="peer-checked/bialaCzekolada:bg-yellow-light-20"
           inputBackground="checked:bg-yellow-light-20"
           peerBorder="peer-checked/bialaCzekolada:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="czekolada"
@@ -23,6 +32,7 @@ const ChooseCakeKrem = () => {
           peerBackground="peer-checked/czekolada:bg-brown-dark-30"
           inputBackground="checked:bg-brown-dark-30"
           peerBorder="peer-checked/czekolada:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="borowkowy"
@@ -33,6 +43,7 @@ const ChooseCakeKrem = () => {
           peerBackground="peer-checked/borowkowy:bg-indigo-900"
           inputBackground="checked:bg-indigo-900"
           peerBorder="peer-checked/borowkowy:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="malinowy"
@@ -43,6 +54,7 @@ const ChooseCakeKrem = () => {
           peerBackground="peer-checked/malinowy:bg-pink-800"
           inputBackground="checked:bg-pink-800"
           peerBorder="peer-checked/malinowy:border-[1px]"
+          onChange={handleChange}
         />
       </div>
     </div>

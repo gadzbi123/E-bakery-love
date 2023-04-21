@@ -1,8 +1,15 @@
-import { ColorPicker, useColor } from "react-color-palette";
+import { ChangeEvent } from "react";
+import { Color, ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
+import { useDispatch } from "react-redux";
+import { updateTynk } from "../../store/cakeOrder/cakeOrder.reducer";
 import ChooseCakeInput from "./ChooseCakeInput";
 
 const ChooseCakeTynk = () => {
+  const dispatch = useDispatch();
+  const handleChange = (c: Color) => {
+    dispatch(updateTynk(c.hex));
+  };
   const [color, setColor] = useColor("hex", "#e0d");
   return (
     <div className=" mt-16">
@@ -17,6 +24,7 @@ const ChooseCakeTynk = () => {
           hideHSV
           //   hideRGB
           dark
+          onChangeComplete={handleChange}
         />
       </div>
     </div>

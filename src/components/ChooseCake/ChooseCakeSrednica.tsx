@@ -1,5 +1,12 @@
+import { ChangeEvent } from "react";
+import { useDispatch } from "react-redux";
+import { updateSrednica } from "../../store/cakeOrder/cakeOrder.reducer";
 import ChooseCakeInput from "./ChooseCakeInput";
 const ChooseCakeSrednica = () => {
+  const dispatch = useDispatch();
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateSrednica(e.target.value));
+  };
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Średnica w cm</h3>
@@ -13,6 +20,8 @@ const ChooseCakeSrednica = () => {
           peerBackground="peer-checked/18:bg-brown-dark-10"
           inputBackground="checked:bg-brown-dark-10"
           peerBorder="peer-checked/18:border-[1px]"
+          onChange={handleChange}
+          isRequired
         />
         <ChooseCakeInput
           id="22"
@@ -23,6 +32,7 @@ const ChooseCakeSrednica = () => {
           peerBackground="peer-checked/22:bg-brown-dark-30"
           inputBackground="checked:bg-brown-dark-30"
           peerBorder="peer-checked/22:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="24"
@@ -33,6 +43,7 @@ const ChooseCakeSrednica = () => {
           peerBackground="peer-checked/24:bg-brown-dark-20"
           inputBackground="checked:bg-brown-dark-20"
           peerBorder="peer-checked/24:border-[1px]"
+          onChange={handleChange}
         />
       </div>
     </div>

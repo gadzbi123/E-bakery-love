@@ -1,15 +1,19 @@
-import { useRef } from "react";
+import { ChangeEvent, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { updateMotyw } from "../../store/cakeOrder/cakeOrder.reducer";
 import ChooseCakeInput from "./ChooseCakeInput";
 const ChooseCakeMotyw = () => {
-  const motywInput = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(updateMotyw(e.target.value));
+  };
 
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Motyw</h3>
-      <div
-        ref={motywInput}
-        className="flex gap-6 justify-center items-center justify-items-center mt-8">
+      <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
+          isRequired
           id="kremowyMotyw"
           name="Motyw"
           label="Ozdoby z kremu"
@@ -18,6 +22,7 @@ const ChooseCakeMotyw = () => {
           peerBackground="peer-checked/kremowy:bg-yellow-light-20"
           inputBackground="checked:bg-yellow-light-20"
           peerBorder="peer-checked/kremowy:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="czekoladkiMotyw"
@@ -28,6 +33,7 @@ const ChooseCakeMotyw = () => {
           peerBackground="peer-checked/czekoladki:bg-brown-dark-30"
           inputBackground="checked:bg-brown-dark-30"
           peerBorder="peer-checked/czekoladki:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="kwiatyMotyw"
@@ -38,6 +44,7 @@ const ChooseCakeMotyw = () => {
           peerBackground="peer-checked/kwiaty:bg-rose-600"
           inputBackground="checked:bg-rose-600"
           peerBorder="peer-checked/kwiaty:border-[1px]"
+          onChange={handleChange}
         />
         <ChooseCakeInput
           id="owoceMotyw"
@@ -48,6 +55,7 @@ const ChooseCakeMotyw = () => {
           peerBackground="peer-checked/owoceMotyw:bg-purple-700"
           inputBackground="checked:bg-purple-700"
           peerBorder="peer-checked/owoceMotyw:border-[1px]"
+          onChange={handleChange}
         />
 
         {/* <input

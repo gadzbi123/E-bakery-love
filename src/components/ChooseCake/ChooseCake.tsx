@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "../Button/Button";
 import ChooseCakeBiszkopt from "./ChooseCakeBiszkopt";
-import ChooseCakeData from "./ChooseCakeData";
+import ChooseCakeDate from "./ChooseCakeDate";
 import ChooseCakeDodatek from "./ChooseCakeDodatek";
 import ChooseCakeKrem from "./ChooseCakeKrem";
 import ChooseCakeMotyw from "./ChooseCakeMotyw";
@@ -9,7 +9,6 @@ import ChooseCakeSrednica from "./ChooseCakeSrednica";
 import ChooseCakeTynk from "./ChooseCakeTynk";
 import ChooseCakeWarstwyKremu from "./ChooseCakeWarstwyKremu";
 import ChooseCakeZamow from "./ChooseCakeZamow";
-
 
 const ChooseCake = () => {
   const choices = useState({});
@@ -26,9 +25,9 @@ const ChooseCake = () => {
         <ChooseCakeDodatek />
         <ChooseCakeTynk />
         <ChooseCakeMotyw />
-        <ChooseCakeData />
-        <ChooseCakeZamow />
-        <Button></Button>
+        <ChooseCakeDate />
+        <Button>Zamów</Button>
+        <ChooseCakeZamow classNames="hidden" />
       </form>
     </div>
   );
