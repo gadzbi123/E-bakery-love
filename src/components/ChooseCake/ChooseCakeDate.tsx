@@ -1,19 +1,22 @@
-import { ChangeEvent, useCallback } from "react";
+import { ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { DAYS_IN_FORWARD } from "../../static/constants";
 import { updateDate } from "../../store/cakeOrder/cakeOrder.reducer";
-import ChooseCakeInput from "./ChooseCakeInput";
+
 const ChooseCakeDate = () => {
-  const calculateMinDate: () => string = useCallback(() => {
+  const calculateMinDate = () => {
     let today = new Date().valueOf();
     let minDate = new Date(today + DAYS_IN_FORWARD * 86_400_000);
-    let minDateFormatted = `${minDate.getFullYear()}-${
-      minDate.getMonth() + 1 < 10
-        ? `0${minDate.getMonth() + 1}`
-        : minDate.getMonth() + 1
-    }-${minDate.getDate()}`;
+
+    let minYear = minDate.getFullYear(),
+      minMonth = minDate.getMonth() + 1,
+      minDay = minDate.getDate();
+    let minDateFormatted = `${minYear}-${
+      minMonth < 10 ? `0${minMonth}` : minMonth
+    }-${minDay < 10 ? `0${minDay}` : minDay}`;
+
     return minDateFormatted;
-  }, []);
+  };
 
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

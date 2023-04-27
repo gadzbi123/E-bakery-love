@@ -1,18 +1,26 @@
 import { ChangeEvent } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateBiszkopt } from "../../store/cakeOrder/cakeOrder.reducer";
 import ChooseCakeInput from "./ChooseCakeInput";
+import { selectBiszkopt } from "../../store/cakeOrder/cakeOrder.selector";
 const ChooseCakeBiszkopt = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(updateBiszkopt(e.target.value));
   };
+
+  const biszkoptValue = useSelector(selectBiszkopt);
+  const biszkoptChecked = (id: string) => {
+    return id === biszkoptValue;
+  };
+
   return (
     <div className=" mt-16">
       <h3 className="text-center text-3xl">Kolor biszkoptu</h3>
       <div className="flex gap-10 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
           isRequired
+          isChecked={biszkoptChecked("bialy")}
           id="bialy"
           name="KolorBiszkoptu"
           label="Biały"
@@ -24,6 +32,7 @@ const ChooseCakeBiszkopt = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={biszkoptChecked("kakaowy")}
           id="kakaowy"
           name="KolorBiszkoptu"
           label="Kakaowy"
@@ -35,6 +44,7 @@ const ChooseCakeBiszkopt = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={biszkoptChecked("szpinakowy")}
           id="szpinakowy"
           name="KolorBiszkoptu"
           label="Szpinakowy"

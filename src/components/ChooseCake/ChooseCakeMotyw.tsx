@@ -1,11 +1,17 @@
 import { ChangeEvent, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateMotyw } from "../../store/cakeOrder/cakeOrder.reducer";
 import ChooseCakeInput from "./ChooseCakeInput";
+import { selectMotyw } from "../../store/cakeOrder/cakeOrder.selector";
 const ChooseCakeMotyw = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(updateMotyw(e.target.value));
+  };
+
+  const motywValue = useSelector(selectMotyw);
+  const motywChecked = (id: string) => {
+    return id === motywValue;
   };
 
   return (
@@ -13,6 +19,7 @@ const ChooseCakeMotyw = () => {
       <h3 className="text-center text-3xl">Motyw</h3>
       <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
+          isChecked={motywChecked("kremowyMotyw")}
           isRequired
           id="kremowyMotyw"
           name="Motyw"
@@ -25,6 +32,7 @@ const ChooseCakeMotyw = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={motywChecked("czekoladkiMotyw")}
           id="czekoladkiMotyw"
           name="Motyw"
           label="Czekoladki"
@@ -36,6 +44,7 @@ const ChooseCakeMotyw = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={motywChecked("kwiatyMotyw")}
           id="kwiatyMotyw"
           name="Motyw"
           label="Kwiaty"
@@ -47,6 +56,7 @@ const ChooseCakeMotyw = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={motywChecked("owoceMotyw")}
           id="owoceMotyw"
           name="Motyw"
           label="Owoce"

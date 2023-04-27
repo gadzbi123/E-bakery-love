@@ -1,32 +1,15 @@
-import {
-  Action,
-  AnyAction,
-  PayloadAction,
-  createAction,
-  createSlice,
-} from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../rootReducer";
 
-type ChoicesState = {
-  biszkopt: string;
-  date: string;
-  dodatek: string;
-  krem: string;
-  motyw: string;
-  srednica: string;
-  tynk: string;
-  warstwyKremu: string;
-};
-
 const INITIAL_CHOICES: ChoicesState = {
-  biszkopt: "",
-  date: "",
-  dodatek: "",
-  krem: "",
-  motyw: "",
-  srednica: "",
-  tynk: "",
-  warstwyKremu: "",
+  biszkopt: null,
+  date: null,
+  dodatek: null,
+  krem: null,
+  motyw: null,
+  srednica: null,
+  tynk: "#e0d",
+  warstwyKremu: null,
 };
 
 export const CakeOrderSlice = createSlice({
@@ -57,6 +40,16 @@ export const CakeOrderSlice = createSlice({
     updateWarstwyKremu(state, action: PayloadAction<string>) {
       state.warstwyKremu = action.payload;
     },
+    resetCakeOrder(state) {
+      state.srednica = null;
+      state.biszkopt = null;
+      state.date = null;
+      state.dodatek = null;
+      state.krem = null;
+      state.motyw = null;
+      state.tynk = "#e0d";
+      state.warstwyKremu = null;
+    },
   },
 });
 
@@ -69,15 +62,6 @@ export const {
   updateMotyw,
   updateTynk,
   updateWarstwyKremu,
+  resetCakeOrder,
 } = CakeOrderSlice.actions;
 export default CakeOrderSlice.reducer;
-export const selectCakeOrder = (state: RootState) => state.cakeOrder;
-export const selectSrednice = (state: RootState) => state.cakeOrder.srednica;
-export const selectBiszkopt = (state: RootState) => state.cakeOrder.biszkopt;
-export const selectDate = (state: RootState) => state.cakeOrder.date;
-export const selectDodatek = (state: RootState) => state.cakeOrder.dodatek;
-export const selectKrem = (state: RootState) => state.cakeOrder.krem;
-export const selectMotyw = (state: RootState) => state.cakeOrder.motyw;
-export const selectTynk = (state: RootState) => state.cakeOrder.tynk;
-export const selectWarstwyKremu = (state: RootState) =>
-  state.cakeOrder.warstwyKremu;

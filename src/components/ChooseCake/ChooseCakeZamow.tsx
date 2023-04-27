@@ -1,26 +1,32 @@
 import { FC } from "react";
+import { useDispatch } from "react-redux";
 import { PHONE_NUMBER } from "../../static/constants";
+import { resetCakeOrder } from "../../store/cakeOrder/cakeOrder.reducer";
 import { Button, ButtonType } from "../Button/Button";
-import ChooseCakeInput from "./ChooseCakeInput";
 
 type ChooseCakeZamowType = {
-  classNames: string;
+  classNames?: string;
 };
 const ChooseCakeZamow: FC<ChooseCakeZamowType> = (
   children,
-  classNames = "",
+  classNames,
   ...props
 ) => {
-  console.log(classNames);
+  const dispatch = useDispatch();
   return (
-    <div className={`mt-16 ${classNames}`}>
-      <h3 className="text-center text-3xl">Zamówienie</h3>
-      <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
-        <h2 className="text-2xl">Zamów przez telefon: {PHONE_NUMBER}</h2>
-        <Button styleType={ButtonType.inverted}>
-          Dodaj zamówienie do bazy
-        </Button>
-      </div>
+    <div
+      className={`absolute flex flex-col items-center h-full justify-center gap-12 w-full`}>
+      <h3 className="text-center text-4xl">Zamówienie</h3>
+      <h4 className="text-2xl">
+        Zamów przez telefon:
+        <span className=" text-red-500">{PHONE_NUMBER}</span>
+      </h4>
+      <h5 className="text-lg">lub</h5>
+      <Button
+        styleType={ButtonType.inverted}
+        onClick={() => dispatch(resetCakeOrder())}>
+        Dodaj zamówienie do bazy
+      </Button>
     </div>
   );
 };

@@ -1,11 +1,16 @@
-import { useDispatch } from "react-redux";
-import ChooseCakeInput from "./ChooseCakeInput";
 import { ChangeEvent } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { updateDodatek } from "../../store/cakeOrder/cakeOrder.reducer";
+import ChooseCakeInput from "./ChooseCakeInput";
+import { selectDodatek } from "../../store/cakeOrder/cakeOrder.selector";
 const ChooseCakeDodatek = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(updateDodatek(e.target.value));
+  };
+  const dodatekValue = useSelector(selectDodatek);
+  const dodatekChecked = (id: string) => {
+    return id === dodatekValue;
   };
   return (
     <div className="mt-16">
@@ -13,6 +18,7 @@ const ChooseCakeDodatek = () => {
       <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
           isRequired
+          isChecked={dodatekChecked("brakDodatku")}
           id="brakDodatku"
           name="Dodatek"
           label="Brak"
@@ -24,6 +30,7 @@ const ChooseCakeDodatek = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={dodatekChecked("chrupiacy")}
           id="chrupiacy"
           name="Dodatek"
           label="Chrupiący"
@@ -35,6 +42,7 @@ const ChooseCakeDodatek = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={dodatekChecked("zelkowy")}
           id="zelkowy"
           name="Dodatek"
           label="Żelkowy"
@@ -46,6 +54,7 @@ const ChooseCakeDodatek = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={dodatekChecked("owoce")}
           id="owoce"
           name="Dodatek"
           label="Owoce"

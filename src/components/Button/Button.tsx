@@ -6,18 +6,23 @@ export enum ButtonType {
   important = "important",
 }
 
-export type buttonProps = {
+// export type buttonProps = {
+//   children?: React.ReactNode;
+//   className?: string;
+//   styleType?: ButtonType;
+// } & React.DetailedHTMLProps<
+//   React.ButtonHTMLAttributes<HTMLButtonElement>,
+//   HTMLButtonElement
+// > &
+//   React.AriaAttributes;
+export type buttonProps = PropsWithChildren<{
   children?: React.ReactNode;
   className?: string;
   styleType?: ButtonType;
-} & React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
-> &
-  React.AriaAttributes;
+}>;
 
-export const Button: FC<buttonProps> = (props) => {
-  const { children, styleType, ...restProps } = props;
+export const Button = (props: buttonProps) => {
+  const { children, styleType, className, ...restProps } = props;
   const style = () => {
     const baseStyle = `bg-yellow border-slate-950`;
     const inverted = `bg-[#7a93f7] border-slate-300`;
@@ -32,13 +37,16 @@ export const Button: FC<buttonProps> = (props) => {
     }
   };
   return (
-    <button
-      className={`${style()} px-6 py-3 max-w-[50%] appearance-none rounded-xl text-lg border border-solid 
-        hover:shadow-lg hover:-translate-y-[4px]
-        active:shadow-md active:-translate-y-[2px]
-        transition-all ${props.className ?? ""}`}
+    <div
+      className={`flex justify-center items-center ${className ?? ""}`}
       {...restProps}>
-      {children}
-    </button>
+      <button
+        className={`${style()} px-6 py-3 max-w-[50%] appearance-none rounded-xl text-lg border border-solid 
+      hover:shadow-lg hover:-translate-y-[4px]
+      active:shadow-md active:-translate-y-[2px]
+      transition-all `}>
+        {children}
+      </button>
+    </div>
   );
 };

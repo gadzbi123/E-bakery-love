@@ -1,17 +1,25 @@
 import { ChangeEvent } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateSrednica } from "../../store/cakeOrder/cakeOrder.reducer";
+import { selectSrednica } from "../../store/cakeOrder/cakeOrder.selector";
 import ChooseCakeInput from "./ChooseCakeInput";
 const ChooseCakeSrednica = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(updateSrednica(e.target.value));
   };
+
+  const srednicaValue = useSelector(selectSrednica);
+  const srednicaChecked = (id: string) => {
+    return id === srednicaValue;
+  };
+
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Średnica w cm</h3>
       <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
+          isChecked={srednicaChecked("18")}
           id="18"
           name="srednica"
           label="18 cm"
@@ -24,6 +32,7 @@ const ChooseCakeSrednica = () => {
           isRequired
         />
         <ChooseCakeInput
+          isChecked={srednicaChecked("22")}
           id="22"
           name="srednica"
           label="22 cm"
@@ -35,6 +44,7 @@ const ChooseCakeSrednica = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={srednicaChecked("24")}
           id="24"
           name="srednica"
           label="24 cm"

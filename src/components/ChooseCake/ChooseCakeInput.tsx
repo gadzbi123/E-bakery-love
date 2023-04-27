@@ -10,6 +10,7 @@ type ChooseCakeInputProps = {
   className?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   isRequired?: boolean;
+  isChecked: boolean;
 };
 const ChooseCakeInput: React.FC<ChooseCakeInputProps> = ({
   name,
@@ -23,11 +24,13 @@ const ChooseCakeInput: React.FC<ChooseCakeInputProps> = ({
   className,
   isRequired = false,
   onChange,
+  isChecked,
 }) => {
   return (
     <div className={`relative ${className ?? ""}`}>
       <input
         required={isRequired}
+        checked={isChecked}
         id={id}
         type="radio"
         name={name}

@@ -1,18 +1,26 @@
-import { useDispatch } from "react-redux";
-import ChooseCakeInput from "./ChooseCakeInput";
 import { ChangeEvent } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { updateKrem } from "../../store/cakeOrder/cakeOrder.reducer";
+import ChooseCakeInput from "./ChooseCakeInput";
+import { selectKrem } from "../../store/cakeOrder/cakeOrder.selector";
 const ChooseCakeKrem = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(updateKrem(e.target.value));
   };
+
+  const kremValue = useSelector(selectKrem);
+  const kremChecked = (id: string) => {
+    return id === kremValue;
+  };
+
   return (
     <div className="mt-16">
       <h3 className="text-center text-3xl">Krem</h3>
       <div className="flex gap-12 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
           isRequired
+          isChecked={kremChecked("bialaCzekolada")}
           id="bialaCzekolada"
           name="Krem"
           label="Biała Czekolada"
@@ -24,6 +32,7 @@ const ChooseCakeKrem = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={kremChecked("czekolada")}
           id="czekolada"
           name="Krem"
           label="Czekolada"
@@ -35,6 +44,7 @@ const ChooseCakeKrem = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={kremChecked("borowkowy")}
           id="borowkowy"
           name="Krem"
           label="Borówkowy"
@@ -46,6 +56,7 @@ const ChooseCakeKrem = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
+          isChecked={kremChecked("malinowy")}
           id="malinowy"
           name="Krem"
           label="Malinowy"
