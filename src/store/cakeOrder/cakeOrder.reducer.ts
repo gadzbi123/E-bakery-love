@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../rootReducer";
 
-const INITIAL_CHOICES: ChoicesState = {
+import { CakeOrderProps } from "./cakeOrder.types";
+
+const INITIAL_CHOICES: CakeOrderProps = {
   biszkopt: null,
   date: null,
   dodatek: null,
@@ -41,14 +42,14 @@ export const CakeOrderSlice = createSlice({
       state.warstwyKremu = action.payload;
     },
     resetCakeOrder(state) {
-      state.srednica = null;
-      state.biszkopt = null;
-      state.date = null;
-      state.dodatek = null;
-      state.krem = null;
-      state.motyw = null;
-      state.tynk = "#e0d";
-      state.warstwyKremu = null;
+      state.srednica = INITIAL_CHOICES.srednica;
+      state.biszkopt = INITIAL_CHOICES.biszkopt;
+      state.date = INITIAL_CHOICES.date;
+      state.dodatek = INITIAL_CHOICES.dodatek;
+      state.krem = INITIAL_CHOICES.krem;
+      state.motyw = INITIAL_CHOICES.motyw;
+      state.tynk = INITIAL_CHOICES.tynk;
+      state.warstwyKremu = INITIAL_CHOICES.warstwyKremu;
     },
   },
 });

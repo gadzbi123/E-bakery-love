@@ -1,4 +1,4 @@
-type ChoicesState = {
+export type CakeOrderProps = {
   biszkopt: string | null;
   date: string | null;
   dodatek: string | null;

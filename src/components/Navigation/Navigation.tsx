@@ -1,25 +1,40 @@
-import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import SearchSvg from "../../assets/search.svg";
+import {
+  GallerySearchContext,
+  GallerySearchProvider,
+} from "../../contexts/gallerySearch.context";
 import { useFocus } from "../../hooks/focus.hook";
 const Navigation = () => {
   const [isFocused, setIsFocused] = useState(false);
-  const onFocus = () => setIsFocused(true);
+  const navigate = useNavigate();
+  const onFocus = () => {
+    navigate("/galeria");
+    setIsFocused(true);
+  };
   const onBlur = () => setIsFocused(false);
-  const [inputRef, setInputFocus] = useFocus();
-  const ref = useRef<HTMLInputElement>(null);
+  const searchBoxRef = useRef<HTMLInputElement>(null);
   const handleClick = () => {
-    ref.current?.focus();
+    searchBoxRef.current?.focus();
+  };
+  const { onSearchChange, resetSearch } = useContext(GallerySearchContext);
+  const onSearchReset = () => {
+    if (searchBoxRef?.current) {
+      searchBoxRef.current.value = "";
+      resetSearch();
+    }
   };
   return (
     <div className="flex justify-around gap-4 h-56 items-center text-navy-dark-20 bg-yellow-light-20">
       <div
         className={`flex justify-center transition-all duration-200 w-[33%]`}>
         <input
-          ref={ref}
+          ref={searchBoxRef}
           onFocus={onFocus}
           onBlur={onBlur}
           placeholder="Szukaj Ciast"
+          onChange={(e) => onSearchChange(e)}
           className=" inline-block bg-transparent placeholder:text-navy focus:outline-none"></input>
         <img src={SearchSvg} className="w-6 h-6 -ml-6 " onClick={handleClick} />
       </div>
@@ -30,7 +45,9 @@ const Navigation = () => {
       </Link>
       <div className="flex space-x-5 justify-around w-[33%] ">
         <Link to="moje-ciasto">Stwórz swoje ciasto</Link>
-        <Link to="galeria">Galeria</Link>
+        <Link to="galeria" onClick={onSearchReset}>
+          Galeria
+        </Link>
         <Link to="kontakt">Kontakt</Link>
       </div>
     </div>
