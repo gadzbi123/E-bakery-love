@@ -11,12 +11,16 @@ const ChooseCakeTynk = () => {
   const [color, setColor] = useColor("hex", "#e0d");
   const selectedTynk = useSelector(selectTynk);
 
-  useEffect(() => {
-    dispatch(updateTynk(color.hex));
-  }, [color]);
+  const setLocalColor = (color: Color) => {
+    if (color.hex !== selectedTynk) {
+      dispatch(updateTynk(color.hex));
+    }
+  };
 
   useEffect(() => {
-    setColor(toColor("hex", selectedTynk) as Color);
+    if (color.hex !== selectedTynk) {
+      setColor(toColor("hex", selectedTynk) as Color);
+    }
   }, [selectedTynk]);
 
   return (
@@ -27,7 +31,7 @@ const ChooseCakeTynk = () => {
           width={500}
           height={200}
           color={color}
-          onChange={setColor}
+          onChange={(e) => setLocalColor(e)}
           hideHEX
           hideHSV
           //   hideRGB

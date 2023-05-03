@@ -60,11 +60,11 @@ const ChooseCake = () => {
             <h3 className="text-center text-4xl">Zamówienie</h3>
             <h4 className="text-2xl">
               Zamów przez telefon:
-              <span className=" text-red-500">{PHONE_NUMBER}</span>
+              <span className=" text-red-500"> {PHONE_NUMBER}</span>
             </h4>
             <h5 className="text-lg">lub</h5>
             <Button buttonType={ButtonType.inverted} onClick={addToDatabase}>
-              Dodaj zamówienie do bazy
+              Dodaj zamówienie
             </Button>
           </div>
         </Modal>
