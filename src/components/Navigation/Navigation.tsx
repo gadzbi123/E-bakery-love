@@ -5,7 +5,7 @@ import {
   GallerySearchContext,
   GallerySearchProvider,
 } from "../../contexts/gallerySearch.context";
-import { useFocus } from "../../hooks/focus.hook";
+import { signInWithFacebookPopup } from "../../utils/firebase";
 const Navigation = () => {
   const [isFocused, setIsFocused] = useState(false);
   const navigate = useNavigate();
@@ -49,6 +49,7 @@ const Navigation = () => {
           Galeria
         </Link>
         <Link to="kontakt">Kontakt</Link>
+        <button onClick={signInWithFacebookPopup}>Facebook</button>
       </div>
     </div>
   );

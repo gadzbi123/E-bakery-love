@@ -4,7 +4,6 @@ import "react-color-palette/lib/css/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTynk } from "../../store/cakeOrder/cakeOrder.reducer";
 import { selectTynk } from "../../store/cakeOrder/cakeOrder.selector";
-import ChooseCakeInput from "./ChooseCakeInput";
 
 const ChooseCakeTynk = () => {
   const dispatch = useDispatch();

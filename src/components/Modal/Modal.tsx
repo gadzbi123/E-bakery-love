@@ -14,7 +14,7 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
       id="modal"
       className=" fixed z-50 top-0 left-0 w-full h-full bg-[#00000025]"
       onClick={modalClose}>
-      <div className="h-[50%] w-[50%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white relative">
+      <div className="h-[60%] w-[70%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 relative">
         {props.children}
       </div>
     </div>

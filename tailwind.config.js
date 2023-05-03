@@ -14,6 +14,19 @@ module.exports = {
       dropShadow: {
         bottom: "0 2px 0 0  rgba(0, 0, 0, 0.25)",
       },
+      keyframes: {
+        appearFromBottom: {
+          "0%": { transform: "translateY(100vh)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        appearFromBottom: "appearFromBottom 0.5s ease-out",
+      },
+      spacing: {
+        18: "4.5rem",
+        30: "7.5rem",
+      },
     },
     fontFamily: {
       body: "work sans",
