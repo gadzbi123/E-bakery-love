@@ -1,8 +1,8 @@
 import { ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateWarstwyKremu } from "../../store/cakeOrder/cakeOrder.reducer";
-import ChooseCakeInput from "./ChooseCakeInput";
 import { selectWarstwyKremu } from "../../store/cakeOrder/cakeOrder.selector";
+import ChooseCakeInput from "./ChooseCakeInput";
 const ChooseCakeWarstwyKremu = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -19,9 +19,9 @@ const ChooseCakeWarstwyKremu = () => {
       <h3 className="text-center text-3xl">Warstwy Kremu</h3>
       <div className="flex gap-10 justify-center items-center justify-items-center mt-8 bg">
         <ChooseCakeInput
-          isChecked={warstwyKremuChecked("2warstwy")}
+          isChecked={warstwyKremuChecked("2")}
           isRequired
-          id="2warstwy"
+          id="2"
           name="WarstwyKremu"
           label="2 warstwy"
           peerRoot="peer/2warstwy"
@@ -32,8 +32,8 @@ const ChooseCakeWarstwyKremu = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
-          isChecked={warstwyKremuChecked("3warstwy")}
-          id="3warstwy"
+          isChecked={warstwyKremuChecked("3")}
+          id="3"
           name="WarstwyKremu"
           label="3 warstwy"
           peerRoot="peer/3warstwy"

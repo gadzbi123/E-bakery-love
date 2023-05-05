@@ -4,7 +4,7 @@ export const selectIsValidCakeOrder = (state: RootState) => {
   if (
     state.cakeOrder.srednica &&
     state.cakeOrder.biszkopt &&
-    state.cakeOrder.date &&
+    state.cakeOrder.dataOdbioru &&
     state.cakeOrder.dodatek &&
     state.cakeOrder.krem &&
     state.cakeOrder.motyw &&
@@ -18,7 +18,7 @@ export const selectIsValidCakeOrder = (state: RootState) => {
 export const selectCakeOrder = (state: RootState) => state.cakeOrder;
 export const selectSrednica = (state: RootState) => state.cakeOrder.srednica;
 export const selectBiszkopt = (state: RootState) => state.cakeOrder.biszkopt;
-export const selectDate = (state: RootState) => state.cakeOrder.date;
+export const selectDate = (state: RootState) => state.cakeOrder.dataOdbioru;
 export const selectDodatek = (state: RootState) => state.cakeOrder.dodatek;
 export const selectKrem = (state: RootState) => state.cakeOrder.krem;
 export const selectMotyw = (state: RootState) => state.cakeOrder.motyw;

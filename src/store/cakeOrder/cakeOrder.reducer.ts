@@ -4,7 +4,7 @@ import { CakeOrderProps } from "./cakeOrder.types";
 
 const INITIAL_CHOICES: CakeOrderProps = {
   biszkopt: null,
-  date: null,
+  dataOdbioru: null,
   dodatek: null,
   krem: null,
   motyw: null,
@@ -24,7 +24,7 @@ export const CakeOrderSlice = createSlice({
       state.biszkopt = action.payload;
     },
     updateDate(state, action: PayloadAction<string>) {
-      state.date = action.payload;
+      state.dataOdbioru = action.payload;
     },
     updateDodatek(state, action: PayloadAction<string>) {
       state.dodatek = action.payload;
@@ -44,7 +44,7 @@ export const CakeOrderSlice = createSlice({
     resetCakeOrder(state) {
       state.srednica = INITIAL_CHOICES.srednica;
       state.biszkopt = INITIAL_CHOICES.biszkopt;
-      state.date = INITIAL_CHOICES.date;
+      state.dataOdbioru = INITIAL_CHOICES.dataOdbioru;
       state.dodatek = INITIAL_CHOICES.dodatek;
       state.krem = INITIAL_CHOICES.krem;
       state.motyw = INITIAL_CHOICES.motyw;

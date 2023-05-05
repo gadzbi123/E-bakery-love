@@ -43,6 +43,35 @@ const ChooseCakePreview = () => {
   };
 
   return (
+    <div>
+      {Object.entries(cakeOrder).map((value, i) => {
+        return (
+          <p key={i} className="text-xl">
+            {value[0] === "tynk" ? (
+              <>
+                {value[0]}:{" "}
+                <span
+                  className="w-8 h-8 inline-block rounded-full border border-black border-solid"
+                  style={{ backgroundColor: cakeOrder.tynk }}>
+                  &nbsp;
+                </span>
+              </>
+            ) : (
+              <>
+                {value[0]
+                  .split(/(?=[A-Z])/)
+                  .join(" ")
+                  .toLocaleLowerCase()}
+                : {value[1]}
+              </>
+            )}
+          </p>
+        );
+      })}
+    </div>
+  );
+  /*
+  return (
     <div className="w-[100%] h-[70%] flex justify-center items-center relative">
       <div
         className={`w-64 h-36 absolute ${getBiszkoptColor()} rounded-md z-[60]`}>
@@ -76,7 +105,7 @@ const ChooseCakePreview = () => {
       <div
         className={` w-80 h-56 absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-[25%] bg-brown-dark-20 rounded-[50%] z-[50] `}></div>
     </div>
-  );
+  );*/
 };
 
 export default ChooseCakePreview;

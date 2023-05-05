@@ -68,14 +68,16 @@ const ChooseCake = () => {
       {modalPreviewOpen ? (
         <Modal handleCloseModal={closePreviewModal}>
           <div
-            className={`absolute flex flex-col items-center h-full justify-evenly  w-full bg-white animate-appearFromBottom rounded-lg`}>
+            className={`absolute flex flex-col items-center h-full justify-evenly w-full bg-white animate-appearFromBottom rounded-lg`}>
             <h3 className="text-center text-4xl">Twoje zamówienie</h3>
             <ChooseCakePreview />
             <div className="flex gap-10">
               <Button buttonType={ButtonType.base} onClick={addToDatabase}>
                 Potwierdź
               </Button>
-              <Button buttonType={ButtonType.important} onClick={addToDatabase}>
+              <Button
+                buttonType={ButtonType.important}
+                onClick={closePreviewModal}>
                 Anuluj
               </Button>
             </div>

@@ -1,6 +1,6 @@
 export type CakeOrderProps = {
   biszkopt: string | null;
-  date: string | null;
+  dataOdbioru: string | null;
   dodatek: string | null;
   krem: string | null;
   motyw: string | null;

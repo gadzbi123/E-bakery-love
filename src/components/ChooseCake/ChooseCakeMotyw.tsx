@@ -19,9 +19,9 @@ const ChooseCakeMotyw = () => {
       <h3 className="text-center text-3xl">Motyw</h3>
       <div className="flex gap-6 justify-center items-center justify-items-center mt-8">
         <ChooseCakeInput
-          isChecked={motywChecked("kremowyMotyw")}
+          isChecked={motywChecked("ozdoby z kremu")}
           isRequired
-          id="kremowyMotyw"
+          id="ozdoby z kremu"
           name="Motyw"
           label="Ozdoby z kremu"
           peerRoot="peer/kremowy"
@@ -32,8 +32,8 @@ const ChooseCakeMotyw = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
-          isChecked={motywChecked("czekoladkiMotyw")}
-          id="czekoladkiMotyw"
+          isChecked={motywChecked("czekoladki")}
+          id="czekoladki"
           name="Motyw"
           label="Czekoladki"
           peerRoot="peer/czekoladki"
@@ -44,8 +44,8 @@ const ChooseCakeMotyw = () => {
           onChange={handleChange}
         />
         <ChooseCakeInput
-          isChecked={motywChecked("kwiatyMotyw")}
-          id="kwiatyMotyw"
+          isChecked={motywChecked("kwiaty")}
+          id="kwiaty"
           name="Motyw"
           label="Kwiaty"
           peerRoot="peer/kwiaty"
@@ -55,9 +55,9 @@ const ChooseCakeMotyw = () => {
           peerBorder="peer-checked/kwiaty:border-[1px]"
           onChange={handleChange}
         />
-        <ChooseCakeInput
-          isChecked={motywChecked("owoceMotyw")}
-          id="owoceMotyw"
+        {/* <ChooseCakeInput
+          isChecked={motywChecked("owoce")}
+          id="owoce"
           name="Motyw"
           label="Owoce"
           peerRoot="peer/owoceMotyw"
@@ -66,8 +66,7 @@ const ChooseCakeMotyw = () => {
           inputBackground="checked:bg-purple-700"
           peerBorder="peer-checked/owoceMotyw:border-[1px]"
           onChange={handleChange}
-        />
-
+        /> */}
         {/* <input
           onFocus={(e) => {
             for (let i = 0; i < motywInput.current!.children!.length - 1; i++) {
