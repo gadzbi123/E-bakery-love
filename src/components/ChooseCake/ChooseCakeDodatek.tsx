@@ -1,8 +1,8 @@
 import { ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateDodatek } from "../../store/cakeOrder/cakeOrder.reducer";
+import { updateDodatek } from "../../store/cakeOrder/cakeOrderStore.reducer";
+import { selectDodatek } from "../../store/cakeOrder/cakeOrderStore.selector";
 import ChooseCakeInput from "./ChooseCakeInput";
-import { selectDodatek } from "../../store/cakeOrder/cakeOrder.selector";
 const ChooseCakeDodatek = () => {
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,8 +1,8 @@
 import { ChangeEvent, createRef, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DAYS_IN_FORWARD } from "../../static/constants";
-import { updateDate } from "../../store/cakeOrder/cakeOrder.reducer";
-import { selectDate } from "../../store/cakeOrder/cakeOrder.selector";
+import { updateDate } from "../../store/cakeOrder/cakeOrderStore.reducer";
+import { selectDate } from "../../store/cakeOrder/cakeOrderStore.selector";
 
 const ChooseCakeDate = () => {
   const calculateMinDate = () => {

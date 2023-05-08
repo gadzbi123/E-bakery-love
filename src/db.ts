@@ -32,7 +32,7 @@ export const db: CardProps[] = [
   {
     id: 4,
     categories: ["dzieci", "zwierzęta"],
-    title: "Tort dla fana ptaszków nr1",
+    title: "Tort dla fana ptaszków nr 1",
     imageUrl: "https://i.ibb.co/6gP2mBR/ptaszki1.jpg",
   },
   {
@@ -44,13 +44,13 @@ export const db: CardProps[] = [
   {
     id: 6,
     categories: ["czekoladki"],
-    title: "Tort czekoladkowy nr1",
+    title: "Tort czekoladkowy nr 1",
     imageUrl: "https://i.ibb.co/G5hDdhc/czekoladki1.jpg",
   },
   {
     id: 7,
     categories: ["urodziny"],
-    title: "Tort dla Dżentelmena nr1",
+    title: "Tort dla Dżentelmena nr 1",
     imageUrl: "https://i.ibb.co/T08NW00/dzentelmen1.jpg",
   },
   {
@@ -62,7 +62,7 @@ export const db: CardProps[] = [
   {
     id: 9,
     categories: ["urodziny", "dzieci", "zwierzęta"],
-    title: "Tort Świnka nr1",
+    title: "Tort Świnka nr 1",
     imageUrl: "https://i.ibb.co/TBDz4Fh/swinka1.jpg",
   },
   {
@@ -80,7 +80,7 @@ export const db: CardProps[] = [
   {
     id: 12,
     categories: ["czekoladki"],
-    title: "Tort Czekoladkowy nr2",
+    title: "Tort Czekoladkowy nr 2",
     imageUrl: "https://i.ibb.co/Rz15MHB/czekoladki2.jpg",
   },
   {
@@ -104,7 +104,7 @@ export const db: CardProps[] = [
   {
     id: 16,
     categories: ["dzieci", "gracz"],
-    title: "Tort Gracza nr2",
+    title: "Tort Gracza nr 2",
     imageUrl: "https://i.ibb.co/h8vz3Nd/gracza2.jpg",
   },
   {
@@ -116,25 +116,25 @@ export const db: CardProps[] = [
   {
     id: 18,
     categories: ["urodziny"],
-    title: "Tort Dla Solenizantki nr1",
+    title: "Tort Dla Solenizantki nr 1",
     imageUrl: "https://i.ibb.co/BnkYNBb/frida.jpg",
   },
   {
     id: 19,
     categories: ["dzieci", "gracz"],
-    title: "Tort Gracza nr3",
+    title: "Tort Gracza nr 3",
     imageUrl: "https://i.ibb.co/bXBj39F/gracza3.jpg",
   },
   {
     id: 20,
     categories: ["urodziny"],
-    title: "Tort Czekoladkowy nr3",
+    title: "Tort Czekoladkowy nr 3",
     imageUrl: "https://i.ibb.co/5hT4WcS/czekoladki3.jpg",
   },
   {
     id: 21,
     categories: ["dzieci", "nietypowy", "zwierzęta"],
-    title: "Tort Świnka nr2",
+    title: "Tort Świnka nr 2",
     imageUrl: "https://i.ibb.co/7jZLzgm/swinka2.jpg",
   },
   {
@@ -146,37 +146,37 @@ export const db: CardProps[] = [
   {
     id: 23,
     categories: ["zwierzęta"],
-    title: "Tort dla fana ptaszków nr2",
+    title: "Tort dla fana ptaszków nr 2",
     imageUrl: "https://i.ibb.co/rF48C0j/ptaszki2.jpg",
   },
   {
     id: 24,
     categories: ["urodziny"],
-    title: "Tort Urodzinowy nr1",
+    title: "Tort Urodzinowy nr 1",
     imageUrl: "https://i.ibb.co/1ZyBSPP/urodziny-Nr1.jpg",
   },
   {
     id: 25,
     categories: ["dzieci", "gracz"],
-    title: "Tort Gracza nr4",
+    title: "Tort Gracza nr 4",
     imageUrl: "https://i.ibb.co/HN9YSLc/gracza4.jpg",
   },
   // {
   //   id: 26,
   //   categories: ["dzieci", "gracz"],
-  //   title: "Tort Gracza nr4",
+  //   title: "Tort Gracza nr 4",
   //   imageUrl: "https://i.ibb.co/HN9YSLc/gracza4.jpg",
   // },
   {
     id: 27,
     categories: ["urodziny"],
-    title: "Tort Czekoladkowy nr4",
+    title: "Tort Czekoladkowy nr 4",
     imageUrl: "https://i.ibb.co/h9P1sGj/czekoladki4.jpg",
   },
   {
     id: 28,
     categories: ["urodziny", "nietypowy"],
-    title: "Tort Pistacjowy nr1",
+    title: "Tort Pistacjowy nr 1",
     imageUrl: "https://i.ibb.co/55JCvX0/pistacjowy1.jpg",
   },
   {
@@ -194,7 +194,7 @@ export const db: CardProps[] = [
   {
     id: 31,
     categories: ["urodziny"],
-    title: "Tort dla Dżentelmena nr2",
+    title: "Tort dla Dżentelmena nr 2",
     imageUrl: "https://i.ibb.co/y5r2pb0/dzentelmen2.jpg",
   },
   {
@@ -206,49 +206,49 @@ export const db: CardProps[] = [
   {
     id: 33,
     categories: ["urodziny"],
-    title: "Tort Dżentelmena nr3",
+    title: "Tort Dżentelmena nr 3",
     imageUrl: "https://i.ibb.co/bsZ7BHN/dzentelmen3.jpg",
   },
   {
     id: 34,
     categories: ["urodziny"],
-    title: "Tort Czekoladowy nr1",
+    title: "Tort Czekoladowy nr 1",
     imageUrl: "https://i.ibb.co/MMySxjd/czekoladowy1.jpg",
   },
   {
     id: 35,
     categories: ["rocznica"],
-    title: "Tort Dla Solenizantki nr2",
+    title: "Tort Dla Solenizantki nr 2",
     imageUrl: "https://i.ibb.co/fqH5ChK/tort18-2.jpg",
   },
   {
     id: 36,
     categories: ["dzieci"],
-    title: "Tort z Bajki nr1",
+    title: "Tort z Bajki nr 1",
     imageUrl: "https://i.ibb.co/25s4gL3/sing.jpg",
   },
   {
     id: 37,
     categories: ["dzieci"],
-    title: "Tort Gracza nr5",
+    title: "Tort Gracza nr 5",
     imageUrl: "https://i.ibb.co/vwfnzdK/spiderman1.jpg",
   },
   {
     id: 38,
     categories: ["dzieci"],
-    title: "Tort Czekoladkowy nr5",
+    title: "Tort Czekoladkowy nr 5",
     imageUrl: "https://i.ibb.co/wp9hhzb/czekoladki5.jpg",
   },
   {
     id: 39,
     categories: ["rocznica"],
-    title: "Tort Oreo nr1",
+    title: "Tort Oreo nr 1",
     imageUrl: "https://i.ibb.co/BCrQdTN/oreo1.jpg",
   },
   {
     id: 40,
     categories: ["rocznica", "nietypowy"],
-    title: "Tort Lekarki nr1",
+    title: "Tort Lekarki nr 1",
     imageUrl: "https://i.ibb.co/RTbr7ht/lekarka1.jpg",
   },
   {
@@ -260,7 +260,7 @@ export const db: CardProps[] = [
   {
     id: 42,
     categories: ["urodziny", "dzieci", "zwierzęta"],
-    title: "Tort Świnka nr3",
+    title: "Tort Świnka nr 3",
     imageUrl: "https://i.ibb.co/PcFMghS/swinka3.jpg",
   },
   {
@@ -278,7 +278,7 @@ export const db: CardProps[] = [
   {
     id: 45,
     categories: ["urodziny"],
-    title: "Tort Kremowy nr1",
+    title: "Tort Kremowy nr 1",
     imageUrl: "https://i.ibb.co/4tVWMzR/kremowy1.jpg",
   },
   {
@@ -296,13 +296,13 @@ export const db: CardProps[] = [
   {
     id: 48,
     categories: ["rocznica"],
-    title: "Tort Kremowy nr2",
+    title: "Tort Kremowy nr 2",
     imageUrl: "https://i.ibb.co/988bw5Y/kremowy2.jpg",
   },
   {
     id: 49,
     categories: ["urodziny", "sport"],
-    title: "Tort Piłkarski nr2",
+    title: "Tort Piłkarski nr 2",
     imageUrl: "https://i.ibb.co/0yBbVjN/pilkarski2.jpg",
   },
   {
@@ -320,13 +320,13 @@ export const db: CardProps[] = [
   {
     id: 52,
     categories: ["urodziny"],
-    title: "Tort Oreo nr2",
+    title: "Tort Oreo nr 2",
     imageUrl: "https://i.ibb.co/7jrkQ0G/oreo2.jpg",
   },
   {
     id: 53,
     categories: ["urodziny"],
-    title: "Tort Kremowy nr3",
+    title: "Tort Kremowy nr 3",
     imageUrl: "https://i.ibb.co/jrvyHbb/kremowy3.jpg",
   },
   {
@@ -368,19 +368,19 @@ export const db: CardProps[] = [
   {
     id: 60,
     categories: ["dzieci"],
-    title: "Tort z Harrego Pottera nr1",
+    title: "Tort z Harrego Pottera nr 1",
     imageUrl: "https://i.ibb.co/r32x7Hb/harryp.jpg",
   },
   {
     id: 61,
     categories: ["sport"],
-    title: "Tort Piłkarski nr3",
+    title: "Tort Piłkarski nr 3",
     imageUrl: "https://i.ibb.co/JvgR1g1/pilkarski3.jpg",
   },
   {
     id: 62,
     categories: ["dzieci", "gracz"],
-    title: "Tort Gracza nr6",
+    title: "Tort Gracza nr 6",
     imageUrl: "https://i.ibb.co/c8VYDhW/roblox.jpg",
   },
   {
@@ -398,13 +398,13 @@ export const db: CardProps[] = [
   {
     id: 65,
     categories: ["urodziny"],
-    title: "Tort Kremowy nr4",
+    title: "Tort Kremowy nr 4",
     imageUrl: "https://i.ibb.co/L8Y6ZpS/kremowy4.jpg",
   },
   {
     id: 66,
     categories: ["dzieci"],
-    title: "Tort z Harrego Pottera nr2",
+    title: "Tort z Harrego Pottera nr 2",
     imageUrl: "https://i.ibb.co/rmsy6gT/harryp2.jpg",
   },
 ];

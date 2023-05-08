@@ -19,6 +19,7 @@ export type buttonProps = PropsWithChildren<{
   children?: React.ReactNode;
   className?: string;
   buttonType?: ButtonType;
+  disabled?: boolean;
 }> &
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -45,11 +46,12 @@ export const Button = (props: buttonProps) => {
     <div
       className={`flex justify-center items-center  w-52 ${className ?? ""}`}>
       <button
+        disabled={props.disabled}
         {...restProps}
         className={`${style()} px-6 py-3 w-full h-full appearance-none rounded-xl text-lg border border-solid 
-      hover:shadow-lg hover:-translate-y-[4px]
-      active:shadow-md active:-translate-y-[2px]
-      transition-all `}>
+      hover:enabled:shadow-lg hover:enabled:-translate-y-[4px]
+      active:enabled:shadow-md active:enabled:-translate-y-[2px]
+      transition-all disabled:opacity-70 `}>
         {children}
       </button>
     </div>

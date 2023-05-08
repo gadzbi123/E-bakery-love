@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateWarstwyKremu } from "../../store/cakeOrder/cakeOrder.reducer";
-import { selectWarstwyKremu } from "../../store/cakeOrder/cakeOrder.selector";
+import { updateWarstwyKremu } from "../../store/cakeOrder/cakeOrderStore.reducer";
+import { selectWarstwyKremu } from "../../store/cakeOrder/cakeOrderStore.selector";
 import ChooseCakeInput from "./ChooseCakeInput";
 const ChooseCakeWarstwyKremu = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { CakeOrderProps } from "./cakeOrder.types";
+import { CakeOrderProps } from "./cakeOrderStore.types";
 
 const INITIAL_CHOICES: CakeOrderProps = {
   biszkopt: null,

@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PHONE_NUMBER } from "../../static/constants";
-import { resetCakeOrder } from "../../store/cakeOrder/cakeOrder.reducer";
-import { selectIsValidCakeOrder } from "../../store/cakeOrder/cakeOrder.selector";
+import { resetCakeOrder } from "../../store/cakeOrder/cakeOrderStore.reducer";
+import { selectIsValidCakeOrder } from "../../store/cakeOrder/cakeOrderStore.selector";
 import { Button, ButtonType } from "../Button/Button";
 import Modal from "../Modal/Modal";
 import ChooseCakeBiszkopt from "./ChooseCakeBiszkopt";
@@ -20,7 +20,7 @@ const ChooseCake = () => {
   const closeOrderModal = () => isModalOrderOpen(false);
   const openOrderModal = () => isModalOrderOpen(true);
 
-  const [modalPreviewOpen, isModalPreviewOpen] = useState(true);
+  const [modalPreviewOpen, isModalPreviewOpen] = useState(false);
   const closePreviewModal = () => isModalPreviewOpen(false);
   const openPreviewModal = () => isModalPreviewOpen(true);
 
@@ -28,7 +28,7 @@ const ChooseCake = () => {
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validCakeOrder) {
-      isModalOrderOpen(true);
+      openPreviewModal();
     }
   };
 
@@ -51,37 +51,14 @@ const ChooseCake = () => {
         <ChooseCakeTynk />
         <ChooseCakeMotyw />
         <ChooseCakeDate />
-        <Button className="mt-16">Zamów</Button>
+        <Button className="mt-16 mx-auto">Zamów</Button>
       </form>
-      <Button
-        buttonType={ButtonType.important}
-        className="mt-16"
-        onClick={openOrderModal}>
-        Open Order Modal
-      </Button>
-      <Button
-        buttonType={ButtonType.important}
-        className="mt-16"
-        onClick={openPreviewModal}>
-        Open Preview Modal
-      </Button>
       {modalPreviewOpen ? (
         <Modal handleCloseModal={closePreviewModal}>
-          <div
-            className={`absolute flex flex-col items-center h-full justify-evenly w-full bg-white animate-appearFromBottom rounded-lg`}>
-            <h3 className="text-center text-4xl">Twoje zamówienie</h3>
-            <ChooseCakePreview />
-            <div className="flex gap-10">
-              <Button buttonType={ButtonType.base} onClick={addToDatabase}>
-                Potwierdź
-              </Button>
-              <Button
-                buttonType={ButtonType.important}
-                onClick={closePreviewModal}>
-                Anuluj
-              </Button>
-            </div>
-          </div>
+          <ChooseCakePreview
+            openOrderModal={openOrderModal}
+            closePreviewModal={closePreviewModal}
+          />
         </Modal>
       ) : null}
       {modalOrderOpen ? (
@@ -94,7 +71,10 @@ const ChooseCake = () => {
               <span className=" text-red-500"> {PHONE_NUMBER}</span>
             </h4>
             <h5 className="text-lg">lub</h5>
-            <Button buttonType={ButtonType.inverted} onClick={addToDatabase}>
+            <Button
+              disabled
+              buttonType={ButtonType.inverted}
+              onClick={addToDatabase}>
               Dodaj zamówienie
             </Button>
           </div>

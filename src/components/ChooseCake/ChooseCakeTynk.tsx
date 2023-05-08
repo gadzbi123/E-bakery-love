@@ -2,8 +2,8 @@ import { ChangeEvent, useEffect } from "react";
 import { Color, ColorPicker, toColor, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateTynk } from "../../store/cakeOrder/cakeOrder.reducer";
-import { selectTynk } from "../../store/cakeOrder/cakeOrder.selector";
+import { updateTynk } from "../../store/cakeOrder/cakeOrderStore.reducer";
+import { selectTynk } from "../../store/cakeOrder/cakeOrderStore.selector";
 
 const ChooseCakeTynk = () => {
   const dispatch = useDispatch();
